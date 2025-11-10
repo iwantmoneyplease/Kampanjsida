@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kampanjsida</title>
     <link rel="stylesheet" href="/assets/style.css">
-    <script src="/assets/logic/obstacles.js"></script>
 </head>
 <body>
-    <canvas id="gameCanvas" width="600" height="400"></canvas>
-    <script src="/assets/logic/player.js"></script>
+  <div id="game-container"></div>
+
+  <script type="module">
+    import { GameEngine } from "/assets/logic/game.js";
+
+    const container = document.getElementById("game-container");
+    const game = new GameEngine({
+      targetFps: 60,
+      targetEl: container
+    });
+  </script>
 </body>
 </html>

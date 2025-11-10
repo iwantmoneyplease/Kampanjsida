@@ -1,5 +1,17 @@
+@font-face {
+  font-family: Cinzel;
+  src: url(fonts/Cinzel/Cinzel-Regular.otf);
+}
+@font-face {
+  font-family: Mirage;
+  src: url(fonts/Mirage/Mirage-Medium.otf);
+}
 main {
   background-color: #ffee00;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #333;
+  overflow: hidden;
 }
 
 #logo {
@@ -9,7 +21,7 @@ main {
 }
 
 #background {
-  background-image: url("img/paris.png");
+  background-image: url("assets/img/paris.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -22,4 +34,23 @@ main {
 body {
   padding: 0;
   margin: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+#game-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+#player {
+  pointer-events: auto;
+}
+
+/* .scroll logo {
+    display: inline-flex;
+    animation: circle 30s linear infinite; *//*# sourceMappingURL=style.css.map */
