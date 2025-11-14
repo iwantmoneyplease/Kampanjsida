@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <div id="game-container"></div>
+  <div id="background"></div>
+  <div id="website">
+    <div id="game-container"></div>
 
-  <script type="module">
-    import { GameEngine } from "/assets/logic/game.js";
+    <script type="module">
+      import { GameEngine } from "/assets/logic/game.js";
 
-    const container = document.getElementById("game-container");
-    const game = new GameEngine({
-      targetFps: 60,
-      targetEl: container
-    });
-  </script>
+      const container = document.getElementById("game-container");
+      const game = new GameEngine({
+        targetFps: 60,
+        targetEl: container
+      });
+    </script>
+  </div>
 </body>
 </html>

@@ -15,7 +15,7 @@ main {
 }
 
 #background {
-    background-image: url("assets/img/paris.png");
+    background-image: url("img/paris.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -36,12 +36,21 @@ body {
   width: 500px;
   height: 500px;
   pointer-events: none;
-  z-index: 999;
+  z-index: 1;
   overflow: hidden;
+  background-color: aqua;
 }
 
 #player {
   pointer-events: auto;  
+}
+
+.block {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
 }
 
 /* .scroll logo {

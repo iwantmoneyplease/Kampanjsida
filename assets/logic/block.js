@@ -5,7 +5,8 @@ export class Block {
     this.div = document.createElement("div");
     this.div.classList.add("block");
     parent.appendChild(this.div);
-
+    this.parentSize = parent.getBoundingClientRect();
+    console.log(this.parentSize.width);
     this.speed = 200;
   }
 
@@ -16,7 +17,7 @@ export class Block {
 
   update(deltatime) {
     this.x += this.speed * deltatime;
-    if (this.x > window.innerWidth) {
+    if (this.x > this.parentSize.width) {
       this.resetPosition();
     }
 
