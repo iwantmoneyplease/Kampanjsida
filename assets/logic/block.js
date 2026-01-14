@@ -13,7 +13,6 @@ export class Block {
   resetPosition() {
     this.x = this.parentSize.width + 60;
     this.y = Math.random() * (this.parentSize.height - 60);
-    console.log(this.parentSize.he)
   }
 
   update(deltatime) {

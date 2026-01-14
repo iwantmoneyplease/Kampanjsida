@@ -15,52 +15,64 @@ main {
 }
 
 #background {
-    background-image: url("img/paris.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    z-index: -1;
+  position: fixed;
+  inset: 0;
+  background-image: url("img/paris.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 body {
     padding: 0;
     margin: 0;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#page {
+  width: 100%;
+  padding: 40px 0;
+}
 #website {
-    background-color: #FFFFFF;
-    display: block;
-    width: 700px;
-    position: fixed;
+  width: 700px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.game-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 #game-container {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 500px;
   height: 500px;
-  pointer-events: none;
-  z-index: 1;
+  background: aqua;
+  position: relative;
   overflow: hidden;
-  background-color: aqua;
 }
 
 #player {
   pointer-events: auto;  
-  &.hit {
-    border: 1px solid yellow;;
-  }
+  z-index: 2;
 }
 
 .block {
     position: absolute;
     display: block;
-    width: 10px;
-    height: 10px;
-    background-color: red;
+    width: 20px;
+    height: 8px;
+    background-image: url("/assets/img/birb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
 }
 
 .car {
@@ -68,9 +80,122 @@ body {
     display: block;
     width: 59px;
     height: 49px;
-    background-color: blue;
+    background-image: url("/assets/img/car.png");
+    z-index: 2;
 }
 
-/* .scroll logo {
-    display: inline-flex;
-    animation: circle 30s linear infinite; */
+.site-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h1 {
+    font-family: Cinzel;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-family: Mirage;
+    color: #555;
+  }
+}
+
+.description {
+  font-family: Mirage;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  will-change: background-position;
+  pointer-events: none;
+}
+
+.bg-far {
+  background-image: url("/assets/img/paris.png");
+  background-size: auto 100%;
+  z-index: 0;
+}
+
+.bg-road {
+  background-image: url("/assets/img/road.png");
+  background-size: contain;
+  z-index: 1;
+  background-position-y: bottom;
+}
+
+.hud {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  z-index: 10;
+  pointer-events: none;
+  font-family: Mirage;
+}
+
+.hud .lives {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.hud .timer {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.loseScreen {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: black;
+  opacity: 80%;
+  color: white;
+  font-family: Cinzel;
+  font-size: 30px;
+}
+
+.winScreen {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: black;
+  opacity: 80%;
+  color: white;
+  font-family: Cinzel;
+  font-size: 30px;
+}
+
+.promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sellout {
+  width: 100px;
+  height: 100px;
+}
+
+.topImg {
+  width: 100px;
+  height: 100px;
+}

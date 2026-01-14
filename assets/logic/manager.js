@@ -41,17 +41,22 @@ export class Manager {
 
         for(let x = 0; x < this.birds.length; x++){
             this.birds[x].update(deltaTime);
-            
         }
     }
+    
+    destroyAll() {
+    this.cars.forEach(car => car.div.remove());
+    this.cars.length = 0;
+    this.birds.forEach(bird => bird.div.remove());
+    this.birds.length = 0;
+    }
+
     draw(deltaTime){
         for(let x = 0; x < this.cars.length; x++){
             this.cars[x].draw();
-            
         }
         for(let x = 0; x < this.birds.length; x++){
             this.birds[x].draw();
-            
         }
     }
 }

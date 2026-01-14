@@ -8,19 +8,58 @@
 </head>
 <body>
   <div id="background"></div>
-  <div id="website">
-    <div id="game-container">
 
-      <script type="module">
-        import { GameEngine } from "/assets/logic/game.js";
+  <div id="page">
+    <div id="website">
 
-        const container = document.getElementById("game-container");
-        const game = new GameEngine({
-          targetFps: 60,
-          targetEl: container
-        });
-      </script>
+      <header class="site-header">
+        <img class="topImg" src="assets/img/arc.png"></img>
+        <h1>Les Jumps-Elysées</h1>
+        <p class="tagline">Survive the traffic of the Champs-Elysées!</p>
+      </header>
+
+      <section class="game-section">
+        <div id="game-container">
+          <div class="bg-layer bg-far"></div>
+          <div class="bg-layer bg-road"></div>
+        </div>
+      </section>
+
+      <section class="description">
+        <h2>How to play</h2>
+        <p>
+          Survive the chaos of the famous street by jumping on cars and dodging the birds until you get to the Arc!
+        </p>
+
+        <ul>
+          <li>A & D Move</li>
+          <li>W Jump</li>
+          <li>You have 3 lives, you can get a boost if you land ona car roof</li>
+        </ul>
+      </section>
+
+            <section class="description">
+        <h2>Stream the song now on all major platforms</h2>
+        <div class="promo">
+          <ul>
+            <li><a href="https://open.spotify.com/track/2fdc49mWSpvedMrjMm4tuh?autoplay=true">Spotify</a></li>
+            <li><a href="https://www.youtube.com/watch?v=1UK4db-utXo">Youtube</a></li>
+            <li><a href="https://music.apple.com/se/album/les-champs-%C3%A9lys%C3%A9es/311331439?i=311331447">Apple Music</a></li>
+          </ul>
+        <img class="sellout" src="assets/img/sellout.jpg"></img>
+        </div>
+      </section>
+
     </div>
   </div>
+
+  <script type="module">
+    import { GameEngine } from "/assets/logic/game.js";
+
+    new GameEngine({
+      targetFps: 60,
+      targetEl: document.getElementById("game-container")
+    });
+  </script>
 </body>
-</html>
+

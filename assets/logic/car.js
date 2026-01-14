@@ -9,6 +9,20 @@ export class Car {
 
     this.speed = speed;
     this.gone = false;
+
+    this.isBoosting = false;
+    this.boostDuration = 0.3;
+    this.boostTimer = 0;
+
+    this.defaultBg = "url('/assets/img/car.png')";
+    this.boostBg = "url('/assets/img/car-squish.png')";
+    this.div.style.backgroundImage = this.defaultBg;
+  }
+
+  triggerBoost() {
+    this.isBoosting = true;
+    this.boostTimer = 0;
+    this.div.style.backgroundImage = this.boostBg;
   }
 
   resetPosition() {
@@ -19,6 +33,15 @@ export class Car {
     this.x += this.speed * deltatime;
     if (this.x < -60) {
       this.gone = true;
+    }
+
+    if (this.isBoosting) {
+      this.boostTimer += deltatime;
+      if (this.boostTimer >= this.boostDuration) {
+        console.log("hej");
+        this.isBoosting = false;
+        this.div.style.backgroundImage = this.defaultBg;
+      }
     }
   }
 
